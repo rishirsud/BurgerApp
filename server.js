@@ -8,11 +8,11 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-app.engine("handlebars", hbs({defaultLayout: "main"}));
-app.set("view-engine", "handlebars");
+app.engine('handlebars', hbs({ defaultLayout: 'main' }));
+app.set('view engine', 'handlebars');
 
-// require("./routes/apiRoutes")(app);
-// require("./routes/htmlRoutes")(app);
+require('./routes/htmlRoutes')(app);
+require('./routes/apiRoutes')(app);
 
 app.listen(PORT, function () {
   console.log(`Listening on PORT: ${PORT}`);
